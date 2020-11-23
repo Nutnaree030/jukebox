@@ -1,8 +1,11 @@
 package components;
 
 import java.util.Scanner;
-
-
+/**
+ *
+ * 
+ * @author Thanakarn
+ */
 public class Customer{
     
     String[] name = new String[50];
@@ -10,6 +13,9 @@ public class Customer{
     int menu;
     
     String nameID;
+/**
+ * To add a customer in this system by typing their name
+ */    
     public void addCustomer(){
         System.out.print("Enter your name : ");
         Scanner s3 = new Scanner(System.in);
@@ -22,8 +28,11 @@ public class Customer{
             break;
         }
         name[i]=nameID;
-        
     }
+
+/**
+ * To show customer what can they choose
+ */
     public int mainMenu(){
         System.out.println("Choose Menu\n1.Search Album\n2.Choose Song\n3.List Album\n4.Logout");
         Scanner s4 =new Scanner(System.in);
@@ -31,6 +40,9 @@ public class Customer{
         return menu;
     }
   
+/**
+ * To log out of this system when required by the customer
+ */
     public void logout(){
         System.out.println("Logout Success\n");
     }

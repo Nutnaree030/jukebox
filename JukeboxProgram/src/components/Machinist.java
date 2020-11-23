@@ -8,11 +8,14 @@ package components;
 import java.util.Scanner;
 /**
  *
- * @author LENOVO
+ * @author Nutnaree
  */
 public class Machinist {
     public Music musics;
     
+/**
+ * To edit the music by typing name for finding and change it
+ */    
     public void editMusic(){
         Scanner input = new Scanner(System.in);
         

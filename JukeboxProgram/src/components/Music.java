@@ -8,7 +8,8 @@ package components;
 import java.util.Scanner;
 /**
  *
- * @author LENOVO
+ * @author Rungphob
+ * @author Nutnaree
  */
 public class Music {
     public int orderNumber = 0;
@@ -24,6 +25,9 @@ public class Music {
         return ms; 
     }
     
+/**
+ * To find the music by typing name
+ */
     public void findMusic(){
         Scanner a = new Scanner(System.in);
         System.out.print("What's song you want to find : ");
@@ -32,19 +36,22 @@ public class Music {
         if (musicName==null){
             System.out.println("Result : Not Found"); 
         } else if (music1==musicName) {
-            System.out.println("Result : "+ music1); /* รอใส่ตัวชื่อเพลง */
+            System.out.println("Result : "+ music1);
         } else {
             System.out.println("Error");
         }
-        
     }
+    
+/**
+ * To choose the music by typing name
+ */
     public void chooseMusic(){
         Scanner input = new Scanner(System.in);
         System.out.print("Choose song :");
         String music2 = input.nextLine();
             
         if (musicName==null){
-            System.out.println("Not Found"); /* รอใส่ตัวชื่อเพลง */
+            System.out.println("Not Found"); 
         } else if (music2==musicName){
            System.out.println("Now You Play : "+music2);
         } else {
@@ -52,6 +59,9 @@ public class Music {
         }
     }
     
+/**
+ * To show lists of the music
+ */
     public void showMusic() {
         Music[] ms = getMusic();
         for (int i = 0; i < ms.length; i++) {
