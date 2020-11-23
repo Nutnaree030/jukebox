@@ -23,22 +23,24 @@ public class Jukebox {
         }while(c1<1||c1>2);
         if(c1==1){
             int c2;
-            int id;
+            ctm.addCustomer();
+            
             do{
-                System.out.println("1.New Customer\n2.Old Customer\n");
-                Scanner s2 = new Scanner(System.in);
-                c2=s2.nextInt();
-                if(c2==1){
-                    id=ctm.addCustomer();
-                    System.out.println("Register Success\nYour ID is "+id);
-                }
-                else{
-                    
-                }
-            }while(c2<1||c2>2);
+                c2=ctm.mainMenu();
+                while(c2==4){
+                    ctm.logout();
+                    ctm.addCustomer();
+                    c2=ctm.mainMenu();
+                }    
+                if(c2==3){System.out.println("test");}
+            
+            }while(c2<1||c2>4);
+            
+          
             
             
         }
+        
     }
     
 }
