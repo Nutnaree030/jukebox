@@ -12,6 +12,7 @@ import java.util.Scanner;
  */
 public class Machinist {
     public Music musics;
+    int menu;
     
 /**
  * To edit the music by typing name for finding and change it
@@ -32,10 +33,25 @@ public class Machinist {
             else System.out.println("Error");
             
     }
-    public boolean chkAuthen(String a){
-        if(a.equals("admin")){
-            return true;
+    public void chkAuthen(){
+        String pass;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Password: ");
+        pass=sc.nextLine();
+        while(!pass.equals("admin")){
+            System.out.println("Access Denied!");
+            System.out.print("Enter Password: ");
+            pass=sc.nextLine();
         }
-        else{return false;}
+        System.out.println("Access Granted!");
+    }
+    public int mainMenu(){
+        System.out.println("Choose Menu\n1.Add Album\n2.Add Song\n3.Show Album\n4.Logout");
+        Scanner s5 =new Scanner(System.in);
+        menu=s5.nextInt();
+        return menu;
+    }
+     public void logout(){
+        System.out.println("Logout Success\n");
     }
 }

@@ -12,55 +12,100 @@ package components;
  */
 import java.util.*;
 public class Jukebox {
+    static Customer ctm = new Customer();
+    static Machinist mn = new Machinist();
     public static void main(String[] args) {
-        int c1;
-        Customer ctm = new Customer();
-        Machinist mn = new Machinist();
+        
+ 
+        mainHome(); //Call Jukebox Main Menu//
+        
+        
+    }
+    public static void mainHome(){ //Jukebox Main Method//
+        int mh;
         do{
             System.out.println("Welcome to Jukebox");
-            System.out.println("1.Customer\n2.Machinist\n");
+            System.out.println("1.Customer\n2.Machinist\n3.Exit");
             Scanner s1 = new Scanner(System.in);
-             c1 = s1.nextInt();
-        }while(c1<1||c1>2);
-        if(c1==1){
-            int c2;
+            mh= s1.nextInt();
+        }while(mh<1||mh>3);
+        if(mh==1){ //Customer Option//
+            int menu1;
+            char ans='a';
             ctm.addCustomer();
-            
             do{
-                c2=ctm.mainMenu();
-                while(c2==4){
+                menu1=ctm.mainMenu(); //Customer Menu: Search Album,Choose Song,Show Album,Logout//
+                while(menu1==4){ //Logout Process//
                     ctm.logout();
-                    ctm.addCustomer();
-                    c2=ctm.mainMenu();
-                }    
-                if(c2==3){System.out.println("test");}
-            
-            }while(c2<1||c2>4);
-        }
-        else{
-            boolean status;
-            String pass;
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Enter Password: ");
-            pass=sc.nextLine();
-            status=mn.chkAuthen(pass);
-            while(status==false){
-                System.out.println("Access Denied!");
-                System.out.print("Enter Password: ");
-                pass=sc.nextLine();
-                status=mn.chkAuthen(pass);
+                    do{
+                        System.out.println("Do you want to go Home Menu? (y/n)");
+                        Scanner yn = new Scanner(System.in);
+                        ans=yn.next().charAt(0);
+                    }while(ans!='y'&&ans!='n');
+                    if(ans=='y'){
+                        mainHome();
+                    }
+                    if(ans=='n'){
+                       ctm.addCustomer();
+                       menu1=ctm.mainMenu();
+                    }
+                    break;
+                    
+               
+                }
+                
+                
+                
+                
+                
+            }while(menu1<1||menu1>4);
+            if(menu1==1){
+                 System.out.println("1");
             }
-            System.out.println("Access Granted!");
-            
-            
-            
-            
-            
-            
-            
+            if(menu1==2){
+                System.out.println("2");
+            }
+            if(menu1==3){
+                System.out.println("3");
+            }
             
         }
-        
+        else if(mh==2){ //Matchinist Option//
+            int menu2;
+            char ans;
+            mn.chkAuthen(); //Matchinist Login//
+            do{
+                menu2=mn.mainMenu(); //Matchinist Menu: Add Album,Add Song,Show Album,Logout//
+                while(menu2==4){
+                    mn.logout(); //Logout Process//
+                    do{
+                        System.out.println("Do you want to go Home Menu? (y/n)");
+                        Scanner yn = new Scanner(System.in);
+                        ans=yn.next().charAt(0);
+                    }while(ans!='y'&&ans!='n');
+                    if(ans=='y'){
+                        mainHome();
+                    }
+                    if(ans=='n'){
+                        mn.chkAuthen();
+                        menu2=mn.mainMenu();
+                    }
+                    break;
+                }
+            
+            }while(menu2<1||menu2>4);
+            if(menu2==1){
+                 System.out.println("1");
+            }
+            if(menu2==2){
+                 System.out.println("2");
+            }
+            if(menu2==3){
+                 System.out.println("3");
+            }
+            
+        }
+        else{System.exit(0);}
     }
     
 }
