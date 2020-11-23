@@ -15,6 +15,7 @@ public class Jukebox {
     public static void main(String[] args) {
         int c1;
         Customer ctm = new Customer();
+        Machinist mn = new Machinist();
         do{
             System.out.println("Welcome to Jukebox");
             System.out.println("1.Customer\n2.Machinist\n");
@@ -37,6 +38,29 @@ public class Jukebox {
             }while(c2<1||c2>4);
             
           
+            
+            
+        }
+        else{
+            boolean status;
+            String pass;
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter Password: ");
+            pass=sc.nextLine();
+            status=mn.chkAuthen(pass);
+            while(status==false){
+                System.out.println("Access Denied!");
+                System.out.print("Enter Password: ");
+                pass=sc.nextLine();
+                status=mn.chkAuthen(pass);
+            }
+            System.out.println("Access Granted!");
+            
+            
+            
+            
+            
+            
             
             
         }

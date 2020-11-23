@@ -29,4 +29,10 @@ public class Machinist {
             else System.out.println("Error");
             
     }
+    public boolean chkAuthen(String a){
+        if(a.equals("admin")){
+            return true;
+        }
+        else{return false;}
+    }
 }
