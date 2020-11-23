@@ -22,18 +22,14 @@ public class Jukebox {
         }while(c1<1||c1>2);
         if(c1==1){
             int c2;
-            String name;
             int id;
             do{
                 System.out.println("1.New Customer\n2.Old Customer\n");
                 Scanner s2 = new Scanner(System.in);
                 c2=s2.nextInt();
                 if(c2==1){
-                    System.out.print("Enter your name : ");
-                    Scanner s3 = new Scanner(System.in);
-                    name = s3.nextLine();
                     Customer ctm = new Customer();
-                    id=ctm.addCustomer(name);
+                    id=ctm.addCustomer();
                     System.out.println("Register Success\nYour ID is "+id);
                 }
                 else{
