@@ -8,7 +8,7 @@ package components;
 
 /**
  *
- * @author LENOVO
+ * @author Thanakarn
  */
 import java.util.*;
 public class Jukebox {
@@ -35,10 +35,6 @@ public class Jukebox {
                 if(c2==3){System.out.println("test");}
             
             }while(c2<1||c2>4);
-            
-          
-            
-            
         }
         
     }
