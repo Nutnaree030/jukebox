@@ -10,6 +10,16 @@ package components;
  *
  * @author LENOVO
  */
+import java.util.*;
 public class Jukebox {
+    public static void main(String[] args) {
+        int num;
+        do{
+            System.out.println("Welcome to Jukebox");
+            System.out.println("1. Customer\n2.Machinist\n");
+            Scanner s = new Scanner(System.in);
+             num = s.nextInt();
+        }while(num<1||num>2);
+    }
     
 }
