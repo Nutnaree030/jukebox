@@ -18,7 +18,12 @@ public class Music {
         orderNumber++;
         this.musicName = name;
     }
-
+    
+    public Music[] getMusic() {
+        Music[] ms = new Music[100];
+        return ms; 
+    }
+    
     public void findMusic(){
         Scanner a = new Scanner(System.in);
         System.out.print("What's song you want to find : ");
@@ -47,6 +52,12 @@ public class Music {
         }
     }
     
+    public void showMusic() {
+        Music[] ms = getMusic();
+        for (int i = 0; i < ms.length; i++) {
+            System.out.println(ms[i].toString());
+        }
+    }
     
     @Override
     public String toString() {
