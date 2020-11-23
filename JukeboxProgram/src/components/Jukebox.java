@@ -14,6 +14,7 @@ import java.util.*;
 public class Jukebox {
     public static void main(String[] args) {
         int c1;
+        Customer ctm = new Customer();
         do{
             System.out.println("Welcome to Jukebox");
             System.out.println("1.Customer\n2.Machinist\n");
@@ -28,7 +29,6 @@ public class Jukebox {
                 Scanner s2 = new Scanner(System.in);
                 c2=s2.nextInt();
                 if(c2==1){
-                    Customer ctm = new Customer();
                     id=ctm.addCustomer();
                     System.out.println("Register Success\nYour ID is "+id);
                 }
