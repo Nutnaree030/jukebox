@@ -107,10 +107,10 @@ public class Jukebox {
             
             }while(menu2<1||menu2>4);
             if(menu2==1){
-                 System.out.println("1");
+                ms.addMusic();
             }
             if(menu2==2){
-                 System.out.println("2");
+                 ms.editMusic();
             }
             if(menu2==3){
                  System.out.println("3");

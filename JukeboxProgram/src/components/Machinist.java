@@ -17,22 +17,7 @@ public class Machinist {
 /**
  * To edit the music by typing name for finding and change it
  */    
-    public void editMusic(){
-        Scanner input = new Scanner(System.in);
-        
-        System.out.println("which name you like to change : ");
-        String name1 = input.nextLine();
-            if(name1==null) System.out.println("Not found");
-            else if(name1==musics.musicName) {
-                System.out.println(musics.toString());
-                System.out.println("You will change be : ");
-                String name2 = input.nextLine();
-                this.musics.musicName = name2;
-                System.out.println(musics.toString());
-            }
-            else System.out.println("Error");
-            
-    }
+   
     public void chkAuthen(){
         String pass;
         Scanner sc = new Scanner(System.in);
@@ -46,7 +31,7 @@ public class Machinist {
         System.out.println("Access Granted!");
     }
     public int mainMenu(){
-        System.out.println("Choose Menu\n1.Add Album\n2.Add Song\n3.Show Album\n4.Logout");
+        System.out.println("Choose Menu\n1.Add Song\n2.Edit Song\n3.Show All Songs\n4.Logout");
         Scanner s5 =new Scanner(System.in);
         menu=s5.nextInt();
         return menu;

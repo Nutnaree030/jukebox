@@ -15,6 +15,7 @@ public class Music{
     static Customer ctm = new Customer();
     static Jukebox jb = new Jukebox();
     static String songs[]={"Sugar","Land","High","Blood","Deep","Careless","Your","Pray","Easy","Normal"};
+    static String[] songs1 = new String[20];
     boolean status=false;
     String music1;
     char ans;
@@ -64,7 +65,56 @@ public class Music{
         System.out.println("Now Listening: "+songs[num-1]);
     }
     
-}
+    public void editMusic(){
+        int i , j;
+        String inpat, temp;
+        Scanner sc = new Scanner(System.in);
+        for (i = 0;i<songs.length;i++){
+            songs1[i]=songs[i];
+        }
+          for (i = 0;songs1[i]!=null;i++){
+            System.out.println(i+1+" "+songs1[i]);
+        }
+        System.out.print("Choose song number to edit: ");
+        j=sc.nextInt();
+        System.out.println("Song to edit is "+songs1[j-1]);
+        System.out.print("Type new song name: ");
+       Scanner sc2 = new Scanner(System.in);
+        inpat=sc2.nextLine();
+        temp=songs1[j-1];
+        songs1[j-1]=inpat;
+        System.out.println("Edit "+temp+" to "+songs1[j-1]);
+        for(j=0;songs1[j]!=null;j++){
+            System.out.println(j+1+" "+songs1[j]);
+        }
+    }
+    
+    public void addMusic(){
+        int i;
+        String input;
+        for( i = 0;i<songs.length;i++){
+            songs1[i] = songs[i];
+        }
+        System.out.print("Add song name : ");
+        Scanner n = new Scanner(System.in);
+        input=n.nextLine();
+        while (i<songs1.length){            
+            if(songs1[i]!=null){
+                i++;
+           }
+            break;
+        }
+        songs1[i]=input;
+        for(i=0;songs1[i]!=null;i++){
+              System.out.println(songs1[i]);
+            }
+           
+        }
+       
+       
+        
+    }
+
   
 
     
