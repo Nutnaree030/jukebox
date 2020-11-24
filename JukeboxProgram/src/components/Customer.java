@@ -34,7 +34,7 @@ public class Customer{
  * To show customer what can they choose
  */
     public int mainMenu(){
-        System.out.println("Choose Menu\n1.Search Album\n2.Choose Song\n3.Show Album\n4.Logout");
+        System.out.println("Choose Menu\n1.Search Song\n2.Choose Song\n3.Show Album\n4.Logout");
         Scanner s4 =new Scanner(System.in);
         menu=s4.nextInt();
         return menu;
